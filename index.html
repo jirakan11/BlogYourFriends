@@ -1,0 +1,576 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="https://kit.fontawesome.com/14630571a1.js" crossorigin="anonymous"></script>
+
+<!--font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Taviraj&display=swap" rel="stylesheet">
+
+
+<title>YourFriends</title>
+<style>
+	
+body{
+font-family:'Taviraj', serif;
+background: #ffffff ;
+height: 100vh;
+margin: 0;
+padding: 0;
+ 
+ }
+
+	
+	nav {
+		display:flex;
+		height: auto;
+		background: #ffffff;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		flex-direction: column;
+			
+		
+	}
+	.nav-toggle{
+		position: absolute;
+		top: 20px;
+		left:20px;
+		font-size: 30px;
+		display: inline-block;
+		cursor: pointer;
+	}
+	.logo{
+		margin: 40px 0 40px 0;
+		
+	}
+	
+	ul{
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 0;
+		display: none;
+		
+	}
+	
+	ul li {
+		list-style-type: none;
+		font-size: 15px;
+		cursor: pointer;
+		margin: 20px;
+		text-align: center;
+		border-bottom-style: solid;
+		border-bottom-color: #ccc;
+		border-bottom-width: 1px;
+		padding: 5px 50px;
+			
+	}
+	
+	ul li a{
+		text-decoration: none;
+		color: #333;
+	}
+	
+	ul li:first-child{
+		margin-top: 0;
+	}
+	
+	ul li:hover{
+		color: blue;
+		
+	}
+	
+	.active {
+		display: flex;
+	}
+	
+	@media screen and (min-width: 800px){
+		nav {
+			height: 80px;
+			flex-direction: row;
+		}
+		.logo{
+			display: none;
+		}
+		ul {
+			display: flex;
+			justify-content: center;
+			width:80%;
+			flex-direction: row;
+			
+		}
+		ul li {
+			display: inline-block;
+			margin: 0 50px 0 0;
+			text-align: left;
+			border-bottom-style: none;
+			font-size: 16px;
+			padding: 0;
+		}
+		.nav-toggle{
+			display: none;
+		}
+	}
+	
+	.banner img {
+		width: 240px;
+		margin: 30px
+		
+	}
+	
+	.post-title{
+		padding-top: 10px;
+	}
+	.post-title a{
+		font-size: 22px;
+		text-decoration: none;
+		color: #333;
+		font-family: 'Taviraj', serif;
+		
+		
+	}
+	.post-title :hover{
+		
+		color: #577399;
+		text-decoration: underline;
+	}
+	
+	.post-title2 a {
+		font-size: 15px;
+		text-decoration: none;
+		color: #333;
+		font-family: 'Taviraj', serif;
+	}
+	.post-title2 :hover{
+		
+		color: #577399;
+		text-decoration: underline;
+	}
+	
+	.post-date a{
+		font-size: 12px;
+		text-decoration: none;
+		color: #333;
+		font-family: 'Taviraj', serif;
+	}
+	
+	.post-date {
+		font-size: 12px;
+		color: #333;
+		font-family: 'Taviraj', serif;
+		margin: 0px 0px 20px ;
+	}
+	
+	
+	.topicdesign {
+		padding: 5px;
+  		height: auto;
+		border-bottom: 1px solid #577399;
+		
+       
+	}
+	.post-tags a {
+		
+		font-size: 11px;
+		text-decoration: none;
+		color: #FFFFFF;
+		font-family: 'Taviraj', serif;
+		border : 0px;
+	 	background-color:#577399;
+		padding: 0px 10px;
+	}
+	.post-tags a:hover{
+		background-color:#F44D27;
+	}
+	.Dwng{
+		padding: 10px ;
+  		height: auto;
+		border: 0px solid #f92626;
+		color: #FFFFFF;
+		text-align: center;
+		background-image: linear-gradient(#577399, #577399);
+    
+	}
+	
+
+	.Dwngpost{
+		font-size: 20px;
+		margin: 10px;
+		padding: 5px;
+  		height: auto;
+		border-bottom: 1px solid #577399;
+	}
+
+	.button  {
+ 
+  border:none;
+  color: black;
+  padding: 20px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px;
+  cursor: pointer;
+
+}
+	
+.button1  {background-color: #FFEF1E;}
+.button2 {background-color: #F183C8;}
+.button3 {background-color: #8AEC45;}  
+.button4 {background-color: #FF8330;}
+.button5 {background-color: #55CDF8;} 
+.button6 {background-color: #B580E8;}
+.button7 {background-color: #F13030;} 
+	
+	.dwngday a {
+		text-decoration: none;
+		color: black;
+	}
+	.dwngday a:hover{
+		color: #ffffff;
+	}
+	
+	.Dwngmore {
+		margin: 8px;
+		
+	}
+	
+	.Dwngmore2 {
+		margin: 8px;
+		
+	}
+	
+	.Next {
+		text-align: right;	
+	}
+	.Next a{
+		color: #577399;
+		text-decoration: none;
+	}
+	
+	.Next :hover{
+		color: #E74122;
+	}
+	#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+ 
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+#myBtn:hover {
+ color: #FF3437;
+}
+</style>
+	
+</head>
+<body>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCXP0GDMDcI0BThnA91xQ4k8PYx_N57PT0",
+    authDomain: "yourfriendswebsite.firebaseapp.com",
+    projectId: "yourfriendswebsite",
+    storageBucket: "yourfriendswebsite.appspot.com",
+    messagingSenderId: "763668850062",
+    appId: "1:763668850062:web:8b79782b57c268891a30df",
+    measurementId: "G-MPK85TMJB9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+	
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-12">
+			<div class="banner"><center><img src="images/logo1.png" alt="logo"></center></div>
+		</div>
+		</div>
+	</div>
+	
+	<!--nav-->
+	<nav class="sticky-top">
+		<span class="nav-toggle" id="js-nav-toggle">
+			<i class="fas fa-bars"></i>
+		</span>
+		<div class="logo">
+			<h6>MENU</h6>
+		</div>
+		
+		<ul id="js-menu">
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+				
+			<li>
+				<a href="blog.html">Blog</a>
+			</li>
+				
+			<li>
+				<a href="about.html">About</a>
+			</li>
+			
+			<li>
+				<a href="portfolio.html">Portfolio</a>
+			</li>
+		</ul>
+	</nav>
+	
+	
+	
+<div class="container">
+<div class="row">
+<div class="col-12">
+	<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+		
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <img src="images/banner.jpg" class="d-block w-100" alt="a">
+     
+    </div>
+    <div class="carousel-item" >
+      <img src="images/0.jpg" class="d-block w-100" alt="a">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>– J.K. Rowling – </h5>
+        <p>“We do not need magic to transform our world. We carry all of the power we need inside ourselves already.”</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href="h2.html"><img src="images/o.jpg" class="d-block w-100" alt="a"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+        <h5>Valentine-Candy</h5>
+      </div>
+    </div>
+  </div>
+		
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+	<br>
+	
+<!--Latest Posts-->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="topicdesign"><h4><i class="fas fa-cookie-bite" style="color:#577399"></i> Latest Posts</h4></div>
+			<br>
+		</div>
+		
+		<div class="col-lg-4">
+			
+			<a href="l1.html"><img src="images/invest/blog2.jpg" class="d-block w-100" alt="a"></a>
+			
+			<div class="post-tags"><a href="lifestyle.html">Lifestyle</a></div>
+			
+			<div class="post-title">
+			<h4><a href="l1.html" rel="author" title="ออมก่อน...รวยกว่า เงินเดือน 15,000 ก็ลงทุนได้">ออมก่อน...รวยกว่า เงินเดือน 15,000 ก็ลงทุนได้</a></h4></div>
+			
+			<div class="post-date"><a href="#" rel="author" title="Posts by Readalert">Your Friends</a>  &nbsp;<i class="fa fa-clock-o"></i> 19 April 2021</div>
+			
+		</div>
+		
+		<div class="col-lg-4">
+			
+			<a href="h1.html"><img src="images/howto/xblog1.jpg" class="d-block w-100" alt="a"></a>
+			
+			<div class="post-tags"><a href="howto.html">How to</a></div>
+			
+			<div class="post-title">
+			<h4><a href="h1.html" rel="author" title="เปลี่ยนตัวเองเป็นคนใหม่ ด้วย 5 กิจกรรมเบาๆ ในยามเช้า!">เปลี่ยนตัวเองเป็นคนใหม่ ด้วย 5 กิจกรรมเบาๆ ในยามเช้า!</a></h4></div>
+			
+			<div class="post-date"><a href="#" rel="author" title="Posts by Readalert">Your Friends</a>  &nbsp;<i class="fa fa-clock-o"></i> 24 April 2021</div>
+			
+		</div>
+		
+		<div class="col-lg-4">
+			
+			<a href="h2.html"><img src="images/howto/candy-post.jpg" class="d-block w-100" alt="a"></a>
+			
+			<div class="post-tags"><a href="howto.html">How to</a></div>
+			
+			<div class="post-title">
+			<h4><a href="h2.html" rel="author" title="7 สูตร ขนมของขวัญวันวาเลนไทน์">7 สูตร ขนมของขวัญวันวาเลนไทน์</a></h4></div>
+			
+			<div class="post-date"><a href="#" rel="author" title="Posts by Readalert">Your Friends</a>  &nbsp;<i class="fa fa-clock-o"></i> 26 April 2021</div>
+			
+		</div>
+		
+		
+		
+		
+	</div>
+</div>
+	<br><br><br>
+	
+
+<!--ดวง
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="Dwng"><h4>ดูดวง <i class="fas fa-star" style="color: yellow"></i></h4></div>
+				<div class="col-lg-12">
+				<div class="Dwngpost"><i class="fas fa-star" style="color:#577399"></i> ดวงตามวันเกิด</div>
+				</div>
+					<div class="dwngday">
+							<button class="button button1"><a href="#">วันจันทร์</a></button>
+							<button class="button button2"><a href="#">วันอังคาร</a></button>
+							<button class="button button3"><a href="#">วันพุธ</a></button>
+							<button class="button button4"><a href="#">วันพฤหัสบดี</a></button>
+							<button class="button button5"><a href="#">วันศุกร์</a></button>
+							<button class="button button6"><a href="#">วันเสาร์</a></button>
+							<button class="button button7"><a href="#">วันอาทิตย์</a></button>
+					</div>
+				
+			<div class="col-lg-12">
+				<div class="Dwngpost"><i class="fas fa-star" style="color:#577399"></i> ดูดวงทั้งหมด</div>
+				</div>
+			
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="Dwngmore">
+						
+						<a href="#"><img src="images/dw1.jpg" class="d-block w-100" alt="a"></a>
+						
+						<div class="post-title"><h4><a href="#">ดวง 12 ราศีนี้ปัง</a></h4></div>
+						<div class="text">Add Post Blog</div>
+						
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="col-12">
+						<div class="Dwngmore2">
+						<a href="#"><img src="images/dw2.jpg" class="d-block w-100" alt="a"></a>
+							<div class="post-title2"><a href="#">Add Post Blog </a></div>
+						</div>
+						
+						<div class="Dwngmore2">
+						<a href="#"><img src="images/dw3.jpg" class="d-block w-100" alt="a"></a>
+							<div class="post-title2"><a href="#">Add Post Blog </a></div>
+						</div>
+						
+						<div class="Next">
+							<a href="#">Next <i class="fas fa-angle-double-right"></i></a>
+						</div>
+						
+					</div>
+				</div>
+			
+			</div>
+
+		</div>
+		
+		
+		
+		
+		
+	
+	</div>
+</div>-->
+
+<img src="images/totop.png" alt="back to top" width="3%" onclick="topFunction()" id="myBtn" title="Go to top">
+	<br><br><br><br>
+			
+<!--Footer-->
+	<footer class="text-center text-light" style="background-color: #577399;">
+		<br>
+		<h5>About me </h5>
+		Your Friends เป็นเว็บไซต์ที่ใช้ในการนำเสนอ Blog <br> ซึ่งมีเนื้อหาเกี่ยวกับ Howto , Liftstyle โดยมีผู้เขียนคนเดียว <br><br> 
+		<h5>Contact :</h5>
+		
+  <div class="container pb-0">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/profile.php?id=100006457174717" role="button"
+        ><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="Mailto:jirakan55@gmail.com" role="button"
+        ><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/zebubbie/" role="button"
+        ><i class="fab fa-instagram"></i></a>
+
+    </section>
+   
+  </div>
+
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright| By YourFriends
+  </div>
+  <!-- Copyright -->
+</footer>
+
+    
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+	
+	
+<script src="js/script.js"></script>	
+<script src="js/bootstrap.min.js"></script> 
+	
+</body>
+</html>
